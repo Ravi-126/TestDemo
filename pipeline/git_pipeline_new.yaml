@@ -9,7 +9,9 @@ steps:
   # ---------------------------
   # Checkout Azure Repo
   # ---------------------------
-  - checkout: self
+  - checkout: github
+    repository: https://github.com/Ravi-126
+    endpoint: GitHubServiceConnection
 
   # ---------------------------
   # Maven Build

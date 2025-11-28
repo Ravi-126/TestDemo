@@ -10,7 +10,8 @@ import org.junit.runner.RunWith;
         (       features = "src/test/resources/webfeature",
                 tags = "@regression",
                 glue = "stepdefinition",
-                plugin = {"pretty", "html:target/cucumber-reports/cucumber-html-report"}
+                plugin = {"pretty", "html:target/cucumber-reports/cucumber-html-report.html"},
+                monochrome = true
 
         )
 
