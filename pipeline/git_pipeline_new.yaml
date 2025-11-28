@@ -4,15 +4,21 @@ trigger:
 pool:
   name: 'NewAgentForProject'   # Default agent
 
-steps:
-
   # ---------------------------
   # Checkout Azure Repo
   # ---------------------------
-  - checkout: github
-    repository: https://github.com/Ravi-126
-    endpoint: GitHubServiceConnection
+# Define GitHub repository as a resource
+resources:
+  repositories:
+    - repository: githubRepo        # local reference name
+      type: github
+      name: Ravi-126/TestDemo   # GitHub username / repo
+      endpoint: GitHubServiceConnection
 
+steps:
+  # ---------------------------
+  # Checkout the GitHub repository
+  - checkout: githubRepo
   # ---------------------------
   # Maven Build
   # ---------------------------
